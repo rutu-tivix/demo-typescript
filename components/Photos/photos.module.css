@@ -1,0 +1,15 @@
+.container {
+  margin-top: 70px;
+}
+
+.container .gallery {
+  margin: 10px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 350px;
+}
+
+.container .desc {
+  /* display:flex; */
+  margin-left: 20px;
+}

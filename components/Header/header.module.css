@@ -1,0 +1,167 @@
+/* .container ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(17, 11, 11);
+  }
+  
+  .container li {
+    float: left;
+  }
+  
+  .container li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .container li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .container .active {
+    background-color: #04AA6D;
+  } */
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 52vh;
+  min-height: 350px;
+  font-size: calc(10px + 2vmin);
+  background-size: cover;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+.header .header__background {
+  position: absolute;
+  width: 100%;
+  height: 60vh;
+  top: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../../assets/bg-img.jpeg");
+}
+
+.header .header__background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.38) 0,
+    rgba(0, 0, 0, 0.38) 3.5%,
+    rgba(0, 0, 0, 0.379) 7%,
+    rgba(0, 0, 0, 0.377) 10.35%,
+    rgba(0, 0, 0, 0.375) 13.85%,
+    rgba(0, 0, 0, 0.372) 17.35%,
+    rgba(0, 0, 0, 0.369) 20.85%,
+    rgba(0, 0, 0, 0.366) 24.35%,
+    rgba(0, 0, 0, 0.364) 27.85%,
+    rgba(0, 0, 0, 0.361) 31.35%,
+    rgba(0, 0, 0, 0.358) 34.85%,
+    rgba(0, 0, 0, 0.355) 38.35%,
+    rgba(0, 0, 0, 0.353) 41.85%,
+    rgba(0, 0, 0, 0.351) 45.35%,
+    rgba(0, 0, 0, 0.35) 48.85%,
+    rgba(0, 0, 0, 0.353) 52.35%,
+    rgba(0, 0, 0, 0.36) 55.85%,
+    rgba(0, 0, 0, 0.371) 59.35%,
+    rgba(0, 0, 0, 0.385) 62.85%,
+    rgba(0, 0, 0, 0.402) 66.35%,
+    rgba(0, 0, 0, 0.42) 69.85%,
+    rgba(0, 0, 0, 0.44) 73.35%,
+    rgba(0, 0, 0, 0.46) 76.85%,
+    rgba(0, 0, 0, 0.48) 80.35%,
+    rgba(0, 0, 0, 0.498) 83.85%,
+    rgba(0, 0, 0, 0.515) 87.35%,
+    rgba(0, 0, 0, 0.529) 90.85%,
+    rgba(0, 0, 0, 0.54) 94.35%,
+    rgba(0, 0, 0, 0.547) 97.85%,
+    rgba(0, 0, 0, 0.55)
+  );
+}
+.header .header__background span img {
+  min-width: 50%;
+  max-width: 100%;
+}
+.header .header__form {
+  width: 35vw;
+  z-index: 1;
+}
+
+.header .header__form .form__logo {
+  margin: 20px 0;
+  color: #fff;
+  font-size: 46px;
+  font-weight: bold;
+}
+
+.header .header__form .form__text {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.5;
+}
+.header .header__form .form__text a {
+  color: #fff;
+  transition: color 0.1s ease-in-out, opacity 0.1s ease-in-out;
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+}
+.container .search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.container .searchTerm {
+  width: 100%;
+  border: 3px solid #00b4cc;
+  border-right: none;
+  padding: 5px;
+  /* height: 20px; */
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9dbfaf;
+}
+
+.searchTerm:focus {
+  color: #00b4cc;
+}
+
+.container .searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00b4cc;
+  background: #00b4cc;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.container .wrap {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  /* background-color: rgb(17, 11, 11); */
+  /* width: 30%;
+    position: absolute;
+    top: 0;
+    /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+}

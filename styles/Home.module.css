@@ -28,6 +28,16 @@
   flex-grow: 1;
 }
 
+.header {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  min-height: 80vh;
+  padding: 4rem 0;
+  flex-direction: column;
+}
+
 .title a {
   color: #0070f3;
   text-decoration: none;
