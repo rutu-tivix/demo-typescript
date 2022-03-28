@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 import Photos from "../components/Photos";
 import SearchBar from "../components/SearchBar";
-import API from "../services";
+import API from "./api/services";
 
 const Home: NextPage = () => {
   const [search, setSearch] = useState<string>("");

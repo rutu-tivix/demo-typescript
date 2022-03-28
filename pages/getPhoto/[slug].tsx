@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
 import Photo from "../../components/GetPhoto";
-import API from "../../services";
+import API from "../api/services";
 
 const GetPhoto: NextPage = () => {
   const router = useRouter();
