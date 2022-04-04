@@ -3,17 +3,19 @@ import Link from "next/link";
 import Image from "next/image";
 
 import styles from "./getphoto.module.css";
+import { PhotoObject } from "../../pages/getPhoto/[slug]";
 
 interface Props {
-  data: any;
+  data: PhotoObject;
 }
-const GetPhoto: NextPage<Props> = (props) => {
+
+const GetPhoto: NextPage<Props> = ({ data }: Props) => {
   return (
     <div className={styles.container}>
-      {props.data && (
+      {data?.urls && (
         <Image
-          src={`${props.data?.urls?.regular}`}
-          alt={props.data.alt_description}
+          src={`${data?.urls}`}
+          alt={data.alt_description}
           width={650}
           height={350}
           layout="responsive"
@@ -21,20 +23,20 @@ const GetPhoto: NextPage<Props> = (props) => {
       )}
       <p>
         Author:
-        <span>{props.data?.user?.username}</span>
+        <span>{data.username}</span>
       </p>
       <div className={styles.desc}>
         <p>
           <span role="img" aria-label="heart emoji">
-            ❤️ {props.data?.likes}
+            ❤️ {data?.likes}
           </span>{" "}
         </p>
         <p>
-          <span> 👁‍🗨{props.data?.views}</span>
+          <span> 👁‍🗨{data?.views}</span>
         </p>
 
         <p>
-          ⬇️ {props.data?.downloads}
+          ⬇️ {data?.downloads}
           <span></span>
         </p>
       </div>
