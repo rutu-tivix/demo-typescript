@@ -130,7 +130,6 @@
   border: 3px solid #00b4cc;
   border-right: none;
   padding: 5px;
-  /* height: 20px; */
   border-radius: 5px 0 0 5px;
   outline: none;
   color: #9dbfaf;
@@ -152,16 +151,16 @@
   font-size: 20px;
 }
 
-/*Resize the wrap to see the search bar change!*/
 .container .wrap {
   margin: 0;
   padding: 0;
   overflow: hidden;
   width: 100%;
-  /* background-color: rgb(17, 11, 11); */
-  /* width: 30%;
-    position: absolute;
-    top: 0;
-    /* left: 50%; */
-  /* transform: translate(-50%, -50%); */
+}
+
+@media only screen and (min-height: 200px) and (max-width: 700px) {
+  .header .header__background {
+    height: auto;
+    max-height: 500px;
+  }
 }

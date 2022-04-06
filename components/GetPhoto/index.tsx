@@ -12,6 +12,7 @@ interface Props {
 const GetPhoto: NextPage<Props> = ({ data }: Props) => {
   return (
     <div className={styles.container}>
+      <div  className={styles.dynamicImage}>
       {data?.urls && (
         <Image
           src={`${data?.urls}`}
@@ -19,8 +20,12 @@ const GetPhoto: NextPage<Props> = ({ data }: Props) => {
           width={650}
           height={350}
           layout="responsive"
+          objectFit='cover'
+          className={styles.image}
         />
       )}
+        </div>
+      
       <p>
         Author:
         <span>{data.username}</span>
