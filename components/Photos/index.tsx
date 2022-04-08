@@ -3,12 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 import styles from "./photos.module.css";
-import bgimg from "../../assets/bg-img.jpeg";
 
 interface Props {
   results: Array<string>;
 }
 const Photos: NextPage<Props> = (props) => {
+  console.log(props.results);
   return (
     <div className={styles.container}>
       {props.results.length === 0 ? (
@@ -21,7 +21,7 @@ const Photos: NextPage<Props> = (props) => {
                 <div className={styles.gallery_item}>
                   <Image
                     className={styles.gallery_image}
-                    src={`${photo.urls.regular}`}
+                    src={`${photo.urls.regular || photo.urls}`}
                     alt={photo.alt_description}
                     width={50}
                     height={50}

@@ -8,6 +8,7 @@ import API from "./api/services";
 const Home: NextPage = () => {
   const [search, setSearch] = useState<string>("");
   const [data, setData] = useState<Array<string>>([]);
+
   useEffect(() => {
     async function fetchLoad() {
       let response = await API.get(

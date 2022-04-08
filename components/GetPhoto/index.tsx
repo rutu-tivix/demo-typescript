@@ -2,30 +2,36 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import Image from "next/image";
 
-import styles from "./getphoto.module.css";
 import { PhotoObject } from "../../pages/getPhoto/[slug]";
+import styles from "./getphoto.module.css";
 
 interface Props {
   data: PhotoObject;
+  handleFavourites?: React.MouseEventHandler<HTMLButtonElement>;
+  favourite: boolean;
 }
 
-const GetPhoto: NextPage<Props> = ({ data }: Props) => {
+const GetPhoto: NextPage<Props> = ({
+  data,
+  handleFavourites,
+  favourite,
+}: Props) => {
   return (
     <div className={styles.container}>
-      <div  className={styles.dynamicImage}>
-      {data?.urls && (
-        <Image
-          src={`${data?.urls}`}
-          alt={data.alt_description}
-          width={650}
-          height={350}
-          layout="responsive"
-          objectFit='cover'
-          className={styles.image}
-        />
-      )}
-        </div>
-      
+      <div className={styles.dynamicImage}>
+        {data?.urls && (
+          <Image
+            src={`${data?.urls}`}
+            alt={data.alt_description}
+            width={650}
+            height={350}
+            layout="responsive"
+            objectFit="cover"
+            className={styles.image}
+          />
+        )}
+      </div>
+
       <p>
         Author:
         <span>{data.username}</span>
@@ -49,6 +55,10 @@ const GetPhoto: NextPage<Props> = ({ data }: Props) => {
       <Link href={`/`} passHref>
         <button>Back to photos</button>
       </Link>
+
+      <button onClick={handleFavourites}>
+        {favourite === true ? "Remove from favourite" : "Save to favourite"}
+      </button>
     </div>
   );
 };
